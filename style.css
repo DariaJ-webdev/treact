@@ -1,0 +1,1654 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+padding: 0;
+margin: 0;
+box-sizing:border-box;
+font-family: "Roboto", sans-serif;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+
+body {
+max-width: 100vw;
+overflow-x: hidden;
+
+}
+
+
+/*Sign Up will have this property #6415ff*/
+
+.row {
+width: 100%;
+max-width: 75rem; /*1200px*/
+margin: 0 auto;
+}
+
+
+
+a {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+
+}
+
+
+.tone {
+color: #6415ff;
+}
+
+/*Reference: 
+https://treact.owaiskhan.me/components/landingPages/SaaSProductLandingPage*/
+
+
+/*NAV BAR*/
+
+nav {
+height: 5rem; /*80px*/
+display: flex;
+margin-top: 1.25rem; /*20px*/
+}
+
+
+.nav__container {
+width: 100%;
+max-width: 75rem;
+padding: 0 1.5rem;  /*0 24 px*/
+display: flex; /* affects direct children logo and ul flex items*/
+justify-content: space-between;
+align-items: center;
+margin: 0 auto;
+}
+
+.logo { /*Children are h3 and logo img*/
+width:auto; /*may change to auto if issues*/
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.logo h2 {
+    margin: 0; /* Remove default margin from h3 */
+    border: none;
+    color: black;
+    text-decoration: none;
+    border: none;
+    margin: 0 .75rem; /*0 12px*/
+    
+}
+
+.logo:hover {
+text-decoration: none; /* removes underline from logo and Treact*/
+}
+
+.logo:hover h2 {
+color:#6415ff;
+text-decoration: none;
+}
+
+.logo h2:hover {
+color: #6415ff;
+}
+
+.logo img {
+    height: 2.5rem; /* Adjust as needed to control the image size 40px*/
+    width: auto; /* Maintain aspect ratio */
+}
+
+ul {
+display: flex;
+
+}
+
+li {
+list-style-type: none;
+}
+
+.nav__link--anchor {
+margin: 0 .75rem;  /*0 12px*/
+text-decoration: none;
+color: black; 
+font-size: .875rem;
+font-weight: 700;
+
+}
+
+.nav__link--anchor:hover {
+color:#6415ff;
+}
+
+.nav__link--primary {
+border: 0.125rem solid #6415ff; /*2 px*/
+border-radius:.25rem; /*4px*/
+
+
+}
+
+.nav__link--primary:hover {
+text-decoration: none;
+}
+
+.nav__link--anchor-primary{ /*removing padding here got rid of extra  horiz line*/
+background-color: #6415ff;
+padding: 0;
+transition: all 300ms ease;
+}
+
+.nav__link--primary.nav__link--anchor-primary {
+color: white; /* This should force the Sign Up text to be white */
+border: .125rem;
+padding: .75rem 2rem;
+border-radius: 9999px; /*624.9375rem*/
+font-size: .875rem;
+}
+
+
+.nav__link--anchor-primary:hover{
+background-color: #41379c;
+transition: all 300ms ease;
+
+}
+
+.nav__link--anchor {
+margin: 0 .75rem;
+text-decoration: none;
+color: black; 
+
+}
+
+/*
+
+Beautiful Templates for You
+
+*/
+
+.large {
+font-size: 1.875rem;
+font-weight: 900;
+line-height: 1.25;
+
+}
+
+
+.template-section {
+    display: flex; /* This makes it a flex container */
+    width: 100%;
+    max-width: 75rem; /* Limit the max width of the section */
+    background-color: white;
+    overflow: hidden; /* Ensures rounded corners are applied correctly */
+    margin: auto;
+}
+/* Left Container (Flex Item 1) */
+.left-container {
+    flex: 0 0 50%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 40% */
+    padding: 1.875rem;
+    display: flex; /* Make left container a flex container too for its content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically if space allows */
+    align-items: flex-start; /* Align content to the start (left) */
+    gap: 1.25rem; /* Space between its child elements 20px */
+}
+
+.left-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.left-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.left-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: .5rem; /* Optional: slight roundness for the image */
+}
+
+/* Right Container (Flex Item 2) */
+.right-container {
+    flex: 0 0 50%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 60% */
+    display: flex; /* Make right container a flex container to center image */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.right-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    width: 100%; /* Make image fill the container width */
+    height: 100%; /* Make image fill the container height */
+}
+
+/*
+
+FORM 
+
+*/
+
+.form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure form takes full width within left-container */
+    max-width: 37.5rem; 
+    margin-top: 1.25rem; /* Add some space above the form */
+    margin-bottom: 1.25rem; /* Add some space below the form */
+}
+
+form {
+    display: flex;
+    width: 100%; /* Make form take full width of its container */
+    max-width: 25rem; /* Adjust max-width for the form itself */
+    border: .0625rem solid #ccc; /* A subtle border */
+    border-radius: 50px; /* Increased border-radius for a rounded rectangle effect */
+    overflow: hidden; /* Important to contain the rounded corners for children */
+    box-shadow: 0 .125rem .625rem rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    transition: border-color 0.3s  border-width 0.3s ; /* Add border-width to transition */
+}
+
+/* This is the rule for border around the form*/
+form:focus-within {
+    border-color: #6451ff; /* New border color when an element inside the form is focused */
+    border-width: .125rem;
+}
+
+.email__input {
+    flex-grow: 1; /* Allows the input to take up available space */
+    padding: 1.5rem 1.25rem;
+    border: none; /* Remove default input border */
+    outline: none; /* Remove outline on focus */
+    font-size: 1rem;
+    border-top-left-radius: 3.125rem; /* Match form's border-radius for the left side */
+    border-bottom-left-radius: 3.125; /* Match form's border-radius for the left side */
+}
+
+.get__started__button {
+    padding: 12px 25px;
+    background-color: #6451ff; 
+    color: white;
+    border: none; /* Remove default button border */
+    border-radius: 3.125rem; /* Match form's border-radius for the right side */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+.get__started__button:hover {
+    background-color: #41379c; /* Darker blue on hover */
+}
+
+.no-cursor {
+    cursor: none;
+} 
+/*END OF FORM ELEMENT*/
+
+ 
+/*
+
+SERVICES FEATURED
+
+*/
+
+/* Corrected .services to be a grid container */
+.services {
+    display: grid; /* Changed to grid for a more controlled layout of features */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    gap: 3rem; /* Space between grid items */
+    width: 100%;
+    max-width: 75rem; /* Align with your row max-width */
+    margin-top: 3rem; /* Space below the centered paragraph */
+}
+
+/* FEATURED Section Styling */
+#features {
+    padding: 8vw 0; /* Adjust vertical padding for the section */
+    min-height: 37.5rem;
+    display: flex; /* Make features section a flex container */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the section */
+}
+
+.features__container {
+    width: 100%;
+    max-width: 75rem; /* Constrain width of content */
+    padding: 0 1.5rem; /* Add horizontal padding */
+}
+
+/* Styling for individual service item */
+.service {
+    display: flex; /* Make each service item a flex container */
+    align-items: flex-start; /* Align icon and content to the top */
+    
+    padding: 1.5rem; /* Keep padding for inner spacing */
+}
+
+.service__content { /* New wrapper for title and description */
+    margin-left: 1rem; /* Space between icon and text */
+}
+
+.section__subtitle { /* FEATURES */
+    font-size: 1.125rem; /* Adjusted size (e.g., 18px) */
+    font-weight: 700;
+    margin-bottom: 0.5rem; /* Space below subtitle */
+    color: #6415ff; /* Ensure it's the accent color */
+}
+
+.section__title { /* WE HAVE AMAZING SERVICE */
+    font-size: 3rem; /* Doubled size (e.g., 48px) */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem; /* Space below title */
+    color: #333;
+}
+
+.centered { /*opening paragraph*/
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.125rem; /* Adjusted font size for paragraph */
+    color: #555;
+    line-height: 1.6;
+    max-width: 50rem; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service__title-second {
+    font-size:1.25rem; /* Adjusted for better hierarchy */
+    font-weight:700;
+    margin-bottom: 0.5rem; /* Adjusted spacing */
+    color: #333;
+}
+
+.service__description {
+    /* padding-right:.375rem; */ /* Removed as content wrapper handles spacing */
+    color: gray;
+    font-size: 1rem; /* Consistent font size */
+    line-height: 1.5;
+}
+
+.icon {
+    display: flex; /* Make icon a flex container to center its content */
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem; /* Fixed width for the circle */
+    height: 3.5rem; /* Fixed height for the circle */
+    border-radius: 50%; /* 50% for a perfect circle */
+    border: 0.0625rem solid #dfdede; /* Gray border around the icon */
+    color: #6415ff; /* Icon color */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.icon i {
+    font-size: 1.75rem; /* Doubled the size of the icon itself (e.g., 28px) */
+}
+
+/* Reliable Icon Rotation */
+.icon__rotate-reliable {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+
+/*
+
+Designed & Developed by Professionals
+
+*/
+
+
+.profs-section {
+    display: flex; /* This makes it a flex container */
+    width: 100%;
+    max-width: 75rem; /* Limit the max width of the section */
+    background-color: white;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+/* Left Container (Flex Item 1) */
+.left-container {
+    flex: 0 0 50%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 40% */
+    padding: 1.875rem;
+    display: flex; /* Make left container a flex container too for its      content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically if space allows */
+    align-items: flex-start; /* Align content to the start (left) */
+    gap: 1.25rem; /* Space between its child elements 20px */
+}
+
+.profs__left-container h1 {
+    font-size: 2.5rem;
+    
+}
+
+.profs__subtitle {
+text-align: left;
+margin-bottom: 1rem;
+
+}
+
+
+.profs__left-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* Right Container (Flex Item 2) */
+.profs__right-container {
+flex: 0 0 50%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 60% */
+display: flex; /* Make right container a flex container to center image */
+justify-content: center;
+align-items: center;
+
+    
+}
+
+.profs__right-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    width: 100%; /* Make image fill the container width */
+    height: 100%; /* Make image fill the container height */
+    border: 0.0625rem solid #dfdede;
+    border-radius: .25rem;
+}
+
+
+.learn__more__button {
+    background-color: #6415ff; 
+    margin-top:1.25rem;
+    padding: 12px 25px;
+    color: white;
+    border: none; /* Remove default button border */
+    border-radius: 3.125rem; /* Match form's border-radius for the right side */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+.learn__more__button:hover {
+    background-color: #41379c; /* Darker blue on hover */
+}
+
+
+/*
+
+
+
+EASY TO GET STARTED
+
+
+
+*/
+
+
+.start-section {
+    display: flex; /* This makes it a flex container */
+    width: 100%;
+    max-width: 75rem; /* Limit the max width of the section */
+    background-color: white;
+    margin: auto;
+    margin-bottom: 4rem;
+    align-items: center;
+    gap:5.75rem;
+}
+/* Left Container (Flex Item 1) */
+.start__left-container {
+    flex: 0 0 40%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 40% */
+    padding: 1.875rem;
+    display: flex; /* Make left container a flex container too for its      content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically if space allows */
+    align-items: flex-start; /* Align content to the start (left) */
+    gap: 2rem; /* Space between its child elements 20px */
+    
+}
+
+.start__right-container h1 {
+    font-size: 2.5rem;
+    
+}
+
+.start__subtitle {
+margin-bottom:1rem;
+text-align-last: left;
+
+}
+
+
+.start__left-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    
+}
+
+.start__left-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: .5rem; /* Optional: slight roundness for the image */
+}
+
+/* Right Container (Flex Item 2) */
+.start__right-container {
+    flex: 0 0 60%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 60% */
+    display: flex; /* Make right container a flex container to center image */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.start__left-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    width: 100%; /* Make image fill the container width */
+    height: 100%; /* Make image fill the container height */
+    border-radius: .25rem;
+}
+
+.start__text-content {
+    /* Keep existing styles */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  
+}
+
+/* New wrapper for the two-column step layout */
+.steps-grid-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr; /* First column (numbers) takes content width, second takes remaining */
+    gap: 2rem; /* Space between the number column and the content column */
+    width: 100%;
+    max-width: 45rem; /* Adjust max-width as needed for the entire steps section */
+    margin-top: 2rem; /* Space below the section title/paragraph */
+    padding: 0 1.875rem; /* Add horizontal padding */
+
+}
+
+/* Styles for the number column */
+.step__numbers-column {
+    display: flex;
+    flex-direction: column; /* Stack numbers vertically */
+    justify-content: space-around;
+    align-items: center; /* Center numbers horizontally within their column */
+    gap: 1.5rem; /* Space between individual number displays */
+    padding-top: -1rem; /*Adjust vertical alignment if needed */
+}
+
+.step__number-display {
+    display: flex;
+    justify-content: space;
+    align-items: center;
+    width: 2.5rem; /* Fixed width for the number container */
+    height: 2.5rem; /* Fixed height for the number container */
+    background-color: transparent; /* Make background transparent */
+    color:  rgb(203 213 224);
+    font-size: 2.25rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    line-height: 1;
+   
+}
+
+/* Styles for the content column */
+.step__content-column {
+    display: flex;
+    flex-direction: column; /* Stack content items vertically */
+    gap: 1.5rem; /* Space between individual content items */
+}
+
+.step__content-item {
+    /* No individual border or shadow here, as requested by the description */
+    padding-bottom: 1rem; /* Space below each content item */
+  
+}
+
+.step__content-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.step__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.step__description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/*
+
+
+Values Section
+
+
+*/
+
+.values-section {
+    display: flex; /* This makes it a flex container */
+    width: 100%;
+    max-width: 75rem; /* Limit the max width of the section */
+    background-color: white;
+    margin: auto;
+    margin-bottom: 5rem;
+    align-items: center; /* Align items vertically in the middle */
+}
+/* Left Container (Flex Item 1) */
+.values__left-container { /* Renamed for specificity */
+    flex: 0 0 50%; 
+    padding: 1.875rem;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 1.25rem; 
+}
+
+.values__left-container h1 {
+    font-size: 2.5rem;
+    
+    
+}
+
+.values__subtitle {
+    text-align: left;
+    margin-bottom: 1rem;
+
+}
+
+
+.values__left-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* Right Container (Flex Item 2) */
+.values__right-container { /* Renamed for specificity */
+flex: 0 0 50%; 
+display: flex; 
+justify-content: center;
+align-items: center;
+
+    
+}
+
+.values__right-image {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: .25rem;
+}
+
+
+.learn__more__button {
+    background-color: #6415ff; 
+    margin-top:1.25rem;
+    padding: 12px 25px;
+    color: white;
+    border: none; 
+    border-radius: 3.125rem; 
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    white-space: nowrap; 
+}
+
+.learn__more__button:hover {
+    background-color: #41379c; 
+}
+
+
+.values__grid-container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 2rem; /* Space between the two columns */
+    margin-top: 1.5rem; /* Space below the main paragraph */
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column; /* Stack icon, title, and description vertically */
+    align-items: flex-start;
+    gap: 0.75rem; /* Space between elements within a value item */
+}
+
+.value-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+.value-header {
+    display: flex;
+    align-items: center; /* Vertically align icon and h3 */
+    gap: 1rem; /* Space between icon and h3 */
+    margin-bottom: 0.5rem; /* Small space between heading and its description */
+}
+
+.value-item h3 {
+    font-size: 1.25rem; /* Example: adjust font size for consistency */
+    font-weight: 700;
+    margin: 0; /* Remove default h3 margin to control spacing with gap */
+    line-height: 1; /* Adjust line height for better vertical alignment with icon */
+}
+
+.value-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+
+.icon__green, .icon__peach{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem; 
+    height: 3.5rem; 
+    border-radius: 50%; 
+    flex-shrink: 0; 
+}
+
+.icon__green {
+background-color: #9ae6b4;
+color: #3a7c58;
+}
+
+.icon__peach {
+background-color: #feb2b2;
+color: #9b2c2c;
+filter:none;
+}
+
+.icon__green i, .icon__peach i { 
+    font-size: 1.75rem;
+}
+
+
+/*
+
+PRICING PLANS
+(AI used for coding the corrections)
+
+
+*/
+
+
+/* PRICING PLANS Section */
+#plans {
+    padding: 6rem 1.25rem; /* Responsive padding for the section */
+    
+}
+
+.plans__container {
+    max-width: 75rem; /* Max width for the entire section content */
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center the initial text content */
+}
+
+.plans__subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: .75rem;
+}
+
+.plans__title {
+    font-size: 2.5rem; /* Larger font for the title */
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: #222;
+}
+
+.plans__container p.centered {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 43.75rem; /* Limit paragraph width */
+    margin: 0 auto 3rem auto; /* Center paragraph and add bottom margin */
+}
+
+.tone {
+    color: #535dcb; /* Example tone color, adjust as needed */
+}
+
+/* Three Plans Container (Grid Layout for Columns) */
+.threeplans__planscontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Single column on small screens */
+    gap: 2rem; /* Gap between columns */
+    margin-top: 3rem;
+    justify-content: center; /* Center items in the grid */
+    align-items: stretch; /* Ensure columns stretch to same height */
+    
+}
+
+
+/* Individual Plan Column */
+.threeplans__plan {
+    background-color: #ffffff;
+    border-radius:.75rem;
+    box-shadow: 0 .625rem 1.25rem rgba(0, 0, 0, 0.08); /* Soft shadow */
+    overflow: hidden; /* Ensures border-top applies correctly */
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    text-align: center; /* Center all content within the column */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+
+/* Specific Top Borders for each Plan */
+/* Note: You might apply these directly in HTML as classes like `border-green` if using Tailwind,
+   but for pure CSS, specific classes for each plan are used. */
+.threeplans__planscontainer > .threeplans__plan:nth-child(1) {
+    border-top: .5rem solid #44bbb3; /* Green border for first plan */
+}
+
+/* Business Plan - Blue accent and background for middle container */
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) {
+    border-top: .5rem solid #535dcb; /* Blue border for second plan */
+    background-color: #535dcb; /* Blue background as specified */
+    color: #ffffff; /* White text for contrast */
+}
+
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) h4,
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) h1,
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .gray,
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .forwhom,
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .feature1 {
+    color: #ffffff; /* Ensure all text inside is white */
+}
+
+/* Enterprise Plan - Red border */
+ .threeplans__plan { /* Using the specific class from your HTML */
+    border-top: .5rem solid #f77979; /* Red border for third plan */
+}
+
+
+
+/* Plan Header (Row 1) */
+.threeplans__planheader {
+    padding: 1.875rem 1.25rem 1.25rem; /* Top, horizontal, bottom padding */
+    border-bottom: 1px solid #e0e0e0; /* Faint gray divider */
+    margin-bottom: 1.25rem; /* Space before next row */
+}
+
+/* Adjust divider color for the blue plan */
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .threeplans__planheader {
+    border-bottom-color: rgba(255, 255, 255, 0.3); /* Lighter divider for blue background */
+}
+
+.threeplans__planheader .name h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: inherit; /* Inherit color from parent (.threeplans__plan) */
+}
+
+.threeplans__planheader .price h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: .25rem;
+    color: inherit;
+}
+
+.threeplans__planheader .duration h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .threeplans__planheader .duration h4 {
+    color: rgba(255, 255, 255, 0.7); /* Lighter gray for blue plan duration */
+}
+
+
+/* Features Container (Row 2) */
+.threeplans__container-features,
+.threeplans-features { /* Both classes from your HTML */
+    padding: 20px; /* Padding for the features section */
+    border-bottom: .0625rem solid #e0e0e0; /* Faint gray divider */
+    margin-bottom: 1.875rem; /* Space before button */
+}
+
+/* Adjust divider color for the blue plan */
+.threeplans__planscontainer > .threeplans__plan:nth-child(2) .threeplans__container-features {
+    border-bottom-color: rgba(255, 255, 255, 0.3); /* Lighter divider for blue background */
+}
+
+.threeplans__container-features .forwhom,
+.threeplans-features .forwhom {
+    display: block; /* Ensures it takes full width */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: .9375rem;
+    color: inherit;
+}
+
+.threeplans__container-features .feature1,
+.threeplans-features .feature1 {
+    display: block; /* Ensures each feature is on its own line */
+    font-size: 1rem;
+    padding: .5rem 0; /* Vertical spacing for features */
+    color: inherit;
+}
+
+/* Buy Now Button Container (Row 3) */
+.plan__button__container {
+    padding: 0 1.25rem 1.875rem; /* Horizontal padding and bottom padding for the button */
+}
+
+.plan__button-green,
+.plan__button-white,
+.plan__button-red {
+    display: inline-block;
+    width: 100%; /* Full width button */
+    padding: .9375rem 1.875rem;
+    border: none;
+    border-radius: 3.125rem; /* Pill shape */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 .3125rem .625rem rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+.plan__button-green {
+    background-color: #44bbb3;
+    color: #fff;
+}
+
+.plan__button-green:hover {
+    background-color: #38a39a; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.plan__button-white {
+    background-color: #ffffff;
+    color: #535dcb; /* Text color as specified */
+    border: 2px solid #535dcb; /* Border matching text color */
+}
+
+.plan__button-white:hover {
+    background-color: #f8f8ef; 
+    transform: translateY(-2px);
+}
+
+.plan__button-red {
+    background-color: #f77979;
+    color: #fff;
+}
+
+.plan__button-red:hover {
+    background-color: #e66b6b; /* Darker red on hover */
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+/*
+
+TESTIMONIALS
+
+
+*/
+
+
+.testimonials-section {
+    display: flex; /* This makes it a flex container */
+    width: 100%;
+    max-width: 75rem; /* Limit the max width of the section */
+    background-color: white;
+    margin: auto;
+    margin-bottom: 5rem;
+    align-items: center; /* Align items vertically in the middle */
+}
+
+/* Left Container (Flex Item 1) */
+.testimonials__left-container {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    padding: 1.875rem; /* Add padding */
+}
+
+.testimonials__left-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: .25rem;
+}
+
+/* Right Container (Flex Item 2) */
+.testimonials__right-container {
+    flex: 0 0 50%;
+    padding: 1.875rem;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: left; /* Center text within the container */
+    gap: 1.25rem; /* Space between its child elements */
+}
+
+.testimonials__right-container h4 {
+    margin-bottom: 0.5rem; /* Adjust margin for subtitle */
+}
+
+.testimonials__right-container h1 {
+    font-size: 2.5rem; /* Keep large font size for title */
+    margin-bottom: 1rem; /* Adjust margin for title */
+}
+
+.testimonials__right-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem; /* Space before the stars */
+}
+
+/* New wrapper to ensure internal content is stacked and centered */
+.testimonial-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Center items within this wrapper */
+    gap: 0.75rem; /* Space between elements like stars, h3, p */
+    width: 100%; /* Take full width of parent */
+}
+
+.client__ratings {
+    color: rgb(209, 178, 4);
+    margin-bottom: 0.5rem; /* Space between stars and h3 */
+    
+}
+
+.testimonial-content-wrapper h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0; /* Remove default margin */
+    text-align: left;
+}
+
+.testimonial-content-wrapper p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1.5rem; /* Space between paragraph and sidebyside div */
+}
+
+.sidebyside {
+    display: flex;
+    align-items: center; /* Vertically align image and text */
+    justify-content: center; /* Center the group horizontally */
+    gap: 1rem; /* Space between image and text */
+    margin-top: 1rem; /* Add some space above this group */
+}
+
+.client-photo { /* New class for Charlotte's image */
+    width: 3.5rem; /* Fixed size for the image */
+    height: 3.5rem;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+.client {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text within 'client' to the start */
+}
+
+.client .gray {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+
+
+
+
+
+/* BLUE BOX */
+
+#blbox.container-row { /* Apply .container-row styles directly to the section */
+    width: 100%;
+    max-width: 75rem; /* Match your overall max-width */
+    background-color: #6415ff; /* Apply the blue background here */
+    border-radius: .5rem; /* Add some border-radius for the box */
+    padding: 2rem 3rem; /* Internal padding for the content within the blue box */
+    display: flex; /* Make this a flex container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    text-align: center; /* Center text for smaller screens */
+    margin: 0 auto 4rem auto; /* Center the section and add bottom margin */
+}
+
+.para {
+    font-weight: 600;
+    color: #fff;
+    font-size: 2.25rem; /* Adjust font size as needed */
+    line-height: 1.2;
+    margin-bottom: 1.5rem; /* Space below the heading */
+    
+}
+
+.button-group { /* New class for the button container */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center buttons when wrapped */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 1rem; /* Space between buttons */
+    width: 100%; /* Take full width of parent */
+}
+
+
+.button__red,
+.button__blue {
+    padding: 0.75rem 2rem;
+    border-radius: 3.125rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.button__red {
+    background-color: #f77979;
+    color: white;
+    border: 2px solid #f77979;
+}
+
+.button__red:hover {
+    background-color: #f53d3d;
+    border-color: #f53d3d;
+}
+
+.button__blue {
+    background-color: #6415ff;
+    color: white;
+    border: 2px solid #e0e0e0; /* Thin gray border */
+}
+
+.button__blue:hover {
+    background-color: #fff;
+    color: #6415ff;
+    border-color: #6415ff;
+}
+
+
+/*
+
+
+FOOTER
+
+
+*/
+
+footer {
+    background-color: #6415ff; /* Light background for the footer */
+    padding: 4rem 1.5rem; /* Vertical and horizontal padding */
+    border-top: 1px solid #e0e0e0; /* Subtle top border */
+}
+
+.footer__columns-container {
+    display: flex;
+    justify-content: space-around; /* Distribute columns evenly */
+    max-width: 75rem; /* Match your row max-width */
+    margin: 0 auto 3rem auto; /* Center and add bottom margin */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    gap: 1.5rem; /* Gap between columns when wrapped */
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% / 5) - 2rem); /* 5 columns with some space for gap */
+    align-items: left; /* links within each column */
+    text-align: left; /* text for titles */
+    min-width: 150px; /* Minimum width for columns before wrapping */
+}
+
+.footer__column-title {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem; /* Space below title */
+}
+
+.footer__column ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: cnter;
+    justify-content: center;
+
+}
+
+.footer__column li {
+    margin-bottom: 0.5rem; /* Space between links */
+    text-align: left;
+    
+}
+
+.footer__column .link { /* Styling for the links within columns */
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-align: left;
+    position: relative; /* Needed for positioning the pseudo-element */
+    overflow: hidden; /* Hide the underline until it's ready to animate */
+    display: inline-block; /* Essential for positioning and width */
+}
+
+
+
+.footer__column .link::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Start with no width */
+    height: 2px; /* Thickness of the underline */
+    background-color: currentColor; /* Matches the text color */
+    bottom: 0; /* Position at the bottom of the link */
+    right: 0; /* Start from the right */
+    transition: width 0.2s ease-out; /* Animation for width change */
+}
+
+.footer__column .link:hover::after {
+    width: 100%; /* Expand to full width on hover */
+    left: 0; /* Ensure it covers the whole link */
+    right: auto; /* Allow left to take precedence */
+}
+.footer__column .link:hover {
+    text-decoration: underline;
+    
+}
+
+.footer__bottom-row {
+    display: flex;
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Vertically align items */
+    max-width: 75rem; /* Match your row max-width */
+    margin: 0 auto; /* Center the row */
+    padding-top: 2rem; /* Space from columns above */
+    border-top: 1px solid #e0e0e0; /* Separator line */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1.5rem; /* Gap between items when wrapped */
+}
+
+.footer__logo-and-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space between logo and text */
+    
+    
+}
+
+.footer-logo img {
+    height: 2.5rem; /* Adjust logo size */
+    width: auto;
+    
+}
+
+.footer-logo h2 {
+    color: #fff; /* Default color for logo text */
+    margin: 0;
+}
+
+
+
+.footer__logo-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer__copyright {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center; /* Center copyright text */
+    flex-grow: 1; /* Allow copyright to take available space */
+}
+
+.footer__social-links {
+    display: flex;
+    gap: 1rem; /* Space between social icons */
+    justify-content: flex-end; /* Align social icons to the right */
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem; /* Size of the circular background */
+    height: 2.5rem;
+    border-radius: 50%; /* Circular shape */
+    color: black; /* Icon color */
+    font-size: 1.25rem; /* Size of the icon itself */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon--facebook {
+    background-color: #fff; /* Facebook blue */
+    text-decoration: none;
+}
+
+.social-icon--facebook:hover {
+    background-color: #d6d3d3;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.social-icon--twitter {
+    background-color: #fff; /* Twitter blue */
+    text-decoration: none;
+}
+
+.social-icon--twitter:hover {
+    background-color: #d6d3d3;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.social-icon--youtube {
+    background-color: #fff; /* YouTube red */
+    text-decoration: none;
+}
+
+.social-icon--youtube:hover {
+    background-color:#d6d3d3;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/* AI 
+
+RECOMMENDED MEDIA ADJUSTMENTS
+
+*/
+
+@media (max-width: 768px) {
+    /* Navigation Bar */
+    .nav__link--list {
+        display: none; /* Hide regular navigation links */
+    }
+
+    .logo {
+        margin: 0 auto; /* Center the logo if links are hidden */
+    }
+
+    /* You'll need to add a hamburger menu icon and its functionality with JavaScript */
+
+    /* Two-Column Sections */
+    .template-section,
+    .profs-section,
+    .start-section,
+    .values-section,
+    .testimonials-section {
+        flex-direction: column; /* Stack columns vertically */
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .left-container,
+    .right-container,
+    .profs__left-container,
+    .profs__right-container,
+    .start__left-container,
+    .start__right-container,
+    .values__left-container,
+    .values__right-container,
+    .testimonials__left-container,
+    .testimonials__right-container {
+        flex: 0 0 100%; /* Make each column take full width */
+        padding: 1rem 0; /* Adjust vertical padding */
+    }
+
+    .large {
+        font-size: 2rem; /* Slightly reduce large headings */
+        text-align: center;
+    }
+
+    .left-container p,
+    .profs__left-container p,
+    .values__left-container p,
+    .testimonials__right-container p {
+        text-align: center;
+    }
+
+    .left-image,
+    .right-image,
+    .profs__right-image,
+    .start__left-image,
+    .values__right-image,
+    .testimonials__left-image {
+        width: 100%; /* Ensure images fill their container */
+        height: auto;
+    }
+
+    .form__container {
+        max-width: 100%;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    /* Features Section */
+    .services {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for features */
+        gap: 2rem; /* Adjust gap */
+    }
+
+    .service {
+        flex-direction: column; /* Stack icon and content vertically */
+        align-items: center; /* Center content within service card */
+        text-align: center; /* Center text */
+    }
+
+    .service__content {
+        margin-left: 0; /* Remove left margin from service content */
+        margin-top: 1rem; /* Add top margin */
+    }
+
+    /* Easy to Get Started Section - Specific adjustments */
+    .steps-grid-wrapper {
+        grid-template-columns: 1fr; /* Stack number and content columns */
+        padding: 0; /* Remove horizontal padding as the parent handles it */
+    }
+
+    .step__numbers-column {
+        flex-direction: row; /* Display numbers horizontally */
+        justify-content: center; /* Center numbers horizontally */
+        gap: 1rem;
+    }
+
+    .step__number-display {
+        font-size: 1.8rem; /* Smaller numbers */
+    }
+
+    .step__content-item {
+        text-align: center; /* Center content within each step item */
+    }
+
+    /* Values Section - Grid adjustments */
+    .values__grid-container {
+        grid-template-columns: 1fr; /* Stack value items vertically */
+        gap: 1.5rem;
+    }
+
+    .value-item {
+        align-items: center; /* Center content within value item */
+        text-align: center;
+    }
+
+    .value-header {
+        justify-content: center; /* Center icon and h3 */
+    }
+
+    /* Pricing Plans */
+    .threeplans__planscontainer {
+        grid-template-columns: 1fr; /* Stack plans vertically */
+    }
+
+    /* Testimonials Section */
+    .testimonial-content-wrapper {
+        align-items: center; /* Center content within testimonial wrapper */
+        text-align: center;
+    }
+
+    .sidebyside {
+        flex-direction: column; /* Stack photo and client details */
+        text-align: center;
+    }
+
+    .client {
+        align-items: center; /* Center client name and title */
+    }
+
+    /* Blue Box */
+    #blbox.container-row {
+        flex-direction: column; /* Stack heading and button group */
+        padding: 2rem 1.5rem; /* Adjust padding */
+    }
+
+    .para {
+        font-size: 1.8rem; /* Smaller font size for the heading */
+        margin-bottom: 1rem; /* Adjust margin */
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 80%; /* Make buttons take more width */
+    }
+
+    .button__red,
+    .button__blue {
+        width: 100%; /* Full width buttons */
+    }
+
+    /* Footer */
+    .footer__columns-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for footer links */
+        gap: 1rem;
+        justify-content: space-evenly; /* Evenly space the 2 columns */
+    }
+
+    .footer__column {
+        min-width: unset; /* Remove min-width to allow more flexibility */
+        align-items: center; /* Center column content */
+    }
+
+    .footer__column ul {
+        align-items: center; /* Center list items within the column */
+    }
+
+    .footer__column .link {
+        text-align: center;
+    }
+
+    .footer__bottom-row {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem;
+    }
+
+    .footer__logo-and-text,
+    .footer__copyright,
+    .footer__social-links {
+        width: 100%; /* Make each item take full width */
+        justify-content: center; /* Center content */
+        text-align: center;
+    }
+
+    .footer__social-links {
+        justify-content: center; /* Center social icons */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
