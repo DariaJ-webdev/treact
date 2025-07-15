@@ -547,9 +547,10 @@ text-align-last: left;
 /* Right Container (Flex Item 2) */
 .start__right-container {
     flex: 0 0 60%; /* flex-grow: 0, flex-shrink: 0, flex-basis: 60% */
-    display: flex; /* Make right container a flex container to center image */
-    justify-content: center;
-    align-items: center;
+    display: grid; /* Changed to grid */
+    grid-template-columns: auto 1fr; /* Number column, then content column */
+    gap: 2rem; /* Space between number and content */
+    align-items: flex-start; /* Align items to the start of their grid area */
     
 }
 
@@ -569,56 +570,43 @@ text-align-last: left;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-  
+    grid-column: 1 / span 2; /* Span across both columns */
+    text-align: left;
 }
 
-/* New wrapper for the two-column step layout */
-.steps-grid-wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr; /* First column (numbers) takes content width, second takes remaining */
-    gap: 2rem; /* Space between the number column and the content column */
-    width: 100%;
-    max-width: 45rem; /* Adjust max-width as needed for the entire steps section */
-    margin-top: 2rem; /* Space below the section title/paragraph */
-    padding: 0 1.875rem; /* Add horizontal padding */
 
-}
 
 /* Styles for the number column */
-.step__numbers-column {
-    display: flex;
-    flex-direction: column; /* Stack numbers vertically */
-    justify-content: space-around;
-    align-items: center; /* Center numbers horizontally within their column */
-    gap: 1.5rem; /* Space between individual number displays */
-    padding-top: -1rem; /*Adjust vertical alignment if needed */
+
+
+  .step__item {
+    display: flex; /* Make it a flex container */
+    flex-direction: row; /* Arrange items horizontally by default */
+    align-items: flex-start; /* Align content to the top */
+    margin-bottom: 2rem;
+    text-align: left; /* Align text within step item to the left */
+    margin-top: 20px;
 }
 
+/* Add margin to the number display for spacing */
 .step__number-display {
-    display: flex;
-    justify-content: space;
-    align-items: center;
-    width: 2.5rem; /* Fixed width for the number container */
-    height: 2.5rem; /* Fixed height for the number container */
-    background-color: transparent; /* Make background transparent */
-    color:  rgb(203 213 224);
-    font-size: 2.25rem;
-    font-weight: 600;
-    flex-shrink: 0;
-    line-height: 1;
-   
+    margin-right: 1.5rem; /* Space between number and text content */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #cbd5e1;
+    /* Remove margin-bottom as it's no longer needed for column layout within step__item */
+    margin-bottom: 0;
 }
 
-/* Styles for the content column */
-.step__content-column {
-    display: flex;
-    flex-direction: column; /* Stack content items vertically */
-    gap: 1.5rem; /* Space between individual content items */
-}
+  .start__subtitle {
+    text-align: left;
+  }
+
 
 .step__content-item {
     /* No individual border or shadow here, as requested by the description */
     padding-bottom: 1rem; /* Space below each content item */
+    text-align: left; /* Align to the left */
   
 }
 
@@ -642,7 +630,6 @@ text-align-last: left;
 
 
 /*
-
 
 Values Section
 
@@ -1019,8 +1006,6 @@ PRICING PLANS
 
 
 
-
-
 /*
 
 TESTIMONIALS
@@ -1062,8 +1047,8 @@ TESTIMONIALS
     padding: 1.875rem;
     display: flex;
     flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: left; /* Center text within the container */
+    align-items: flex-start; /* Align content horizontally to the start */
+    text-align: left; /* Align text to the left */
     gap: 1.25rem; /* Space between its child elements */
 }
 
@@ -1087,7 +1072,7 @@ TESTIMONIALS
 .testimonial-content-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: left; /* Center items within this wrapper */
+    align-items: flex-start; /* Align items within this wrapper to the start */
     gap: 0.75rem; /* Space between elements like stars, h3, p */
     width: 100%; /* Take full width of parent */
 }
@@ -1116,7 +1101,7 @@ TESTIMONIALS
 .sidebyside {
     display: flex;
     align-items: center; /* Vertically align image and text */
-    justify-content: center; /* Center the group horizontally */
+    justify-content: flex-start; /* Align to the left */
     gap: 1rem; /* Space between image and text */
     margin-top: 1rem; /* Add some space above this group */
 }
@@ -1138,7 +1123,6 @@ TESTIMONIALS
     font-size: 0.9rem;
     color: gray;
 }
-
 
 
 
@@ -1241,7 +1225,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: calc((100% / 5) - 2rem); /* 5 columns with some space for gap */
-    align-items: left; /* links within each column */
+    align-items: flex-start; /* links within each column */
     text-align: left; /* text for titles */
     min-width: 150px; /* Minimum width for columns before wrapping */
 }
@@ -1259,8 +1243,8 @@ footer {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: cnter;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 
 }
 
@@ -1405,10 +1389,6 @@ footer {
 
 
 
-
-
-
-
 /* AI 
 
 RECOMMENDED MEDIA ADJUSTMENTS
@@ -1481,11 +1461,19 @@ RECOMMENDED MEDIA ADJUSTMENTS
         max-width: 100%;
     }
 
+  #profs .profs__subtitle,
+  #profs .learn__more__button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
     /* Features Section */
+
     .services {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for features */
-        gap: 2rem; /* Adjust gap */
+    grid-template-columns: 1fr; /* one column stack */
     }
+    
 
     .service {
         flex-direction: column; /* Stack icon and content vertically */
@@ -1499,26 +1487,52 @@ RECOMMENDED MEDIA ADJUSTMENTS
     }
 
     /* Easy to Get Started Section - Specific adjustments */
-    .steps-grid-wrapper {
-        grid-template-columns: 1fr; /* Stack number and content columns */
-        padding: 0; /* Remove horizontal padding as the parent handles it */
+
+
+     .step__item {
+        flex-direction: column; /* Stack number and content vertically on small screens */
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center text within the step item */
     }
 
-    .step__numbers-column {
-        flex-direction: row; /* Display numbers horizontally */
-        justify-content: center; /* Center numbers horizontally */
-        gap: 1rem;
+    .start__right-container {
+        grid-template-columns: 1fr; /* Stack number and content columns */
+        padding: 0; /* Remove horizontal padding as the parent handles it */
+        text-align: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+    }
+    
+    .start__text-content {
+        align-items: center;
+        text-align: center;
     }
 
     .step__number-display {
-        font-size: 1.8rem; /* Smaller numbers */
+        font-size: 2rem;
+        font-weight: bold;
+        color: #cbd5e1;
+        margin-bottom: 0.5rem;
+        text-align: center; /* Center on smaller screens */
+        padding-right: 0; /* Remove padding */
     }
 
+    .start__subtitle {
+        text-align: center;
+    }
     .step__content-item {
         text-align: center; /* Center content within each step item */
     }
 
     /* Values Section - Grid adjustments */
+
+    #values h4,
+    #values .learn__more__button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
     .values__grid-container {
         grid-template-columns: 1fr; /* Stack value items vertically */
         gap: 1.5rem;
@@ -1539,6 +1553,10 @@ RECOMMENDED MEDIA ADJUSTMENTS
     }
 
     /* Testimonials Section */
+    .testimonials__right-container {
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center text within the container */
+    }
     .testimonial-content-wrapper {
         align-items: center; /* Center content within testimonial wrapper */
         text-align: center;
@@ -1547,6 +1565,7 @@ RECOMMENDED MEDIA ADJUSTMENTS
     .sidebyside {
         flex-direction: column; /* Stack photo and client details */
         text-align: center;
+        justify-content: center; /* Center the group horizontally */
     }
 
     .client {
@@ -1574,43 +1593,53 @@ RECOMMENDED MEDIA ADJUSTMENTS
         width: 100%; /* Full width buttons */
     }
 
-    /* Footer */
-    .footer__columns-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for footer links */
-        gap: 1rem;
-        justify-content: space-evenly; /* Evenly space the 2 columns */
+    /* Footer */.footer__columns-container {
+        display: flex; /* Keep flex display */
+        flex-direction: row; /* Allow items to remain in a row initially */
+        flex-wrap: wrap; /* Allow columns to wrap to the next line */
+        justify-content: center; /* Center the columns horizontally */
+        align-items: flex-start; /* Align columns to the start of the cross axis */
+        gap: 1.5rem; /* Maintain gap between columns */
     }
 
     .footer__column {
-        min-width: unset; /* Remove min-width to allow more flexibility */
-        align-items: center; /* Center column content */
+        width: calc(100% / 3 - 1rem); /* Approximately 3 columns per row, adjusting for gap */
+        min-width: 150px; /* Ensure columns don't get too small */
+        text-align: center; /* Center text within each column */
+        align-items: center; /* Center content within each column */
     }
 
-    .footer__column ul {
-        align-items: center; /* Center list items within the column */
+    /* Ensure the order of columns remains as desired */
+    .footer__columns-container .footer__column:nth-child(1),
+    .footer__columns-container .footer__column:nth-child(2),
+    .footer__columns-container .footer__column:nth-child(3) {
+        order: 1; /* These will appear first */
     }
 
-    .footer__column .link {
-        text-align: center;
+    .footer__columns-container .footer__column:nth-child(4),
+    .footer__columns-container .footer__column:nth-child(5) {
+        order: 2; /* These will appear second */
+        /* If you want the last two to be centered as a pair,
+           you might need to adjust their width further or use a nested container */
+        width: calc(100% / 2 - 1rem); /* Adjust width for 2 columns per row */
     }
 
     .footer__bottom-row {
-        flex-direction: column; /* Stack items vertically */
-        gap: 1rem;
-    }
-
-    .footer__logo-and-text,
-    .footer__copyright,
-    .footer__social-links {
-        width: 100%; /* Make each item take full width */
-        justify-content: center; /* Center content */
+        flex-direction: column; /* Stack bottom row items */
         text-align: center;
+        align-items: center;
+    }
+
+    .footer__logo-and-text {
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .footer__social-links {
-        justify-content: center; /* Center social icons */
+        justify-content: center;
     }
 }
+
 
 
 
